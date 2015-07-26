@@ -12,7 +12,7 @@ Class({
 });
 
 ng.router.RouteConfig([
-	{ path: '/', component: HomeComponent},
+	{ path: '/', redirectTo: '/home'},
 	{ path: '/home', component: HomeComponent, as: 'home'},
 	{ path: '/test', component: TestComponent, as: 'test'}
 ])(App);
