@@ -1,4 +1,8 @@
-var TestComponent = ng.
+'use stict';
+
+(function (app) {
+
+app.TestComponent = ng.
 
 Component({}).
 View({
@@ -8,3 +12,5 @@ View({
 Class({
 	constructor: function () {}
 });
+
+})(this.app);

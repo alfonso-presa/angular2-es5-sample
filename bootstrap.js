@@ -1,6 +1,10 @@
+'use stict';
+
+(function (app) {
+
 document.addEventListener('DOMContentLoaded', function () {
 
-	ng.bootstrap(App, [
+	ng.bootstrap(app.Main, [
 		ng.httpInjectables,
 		ng.bind(ng.router.Router).toFactory(
 			function (registry, pipeline, location, appRoot) {
@@ -9,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			    ng.router.RouteRegistry,
 			    ng.router.Pipeline,
 			    ng.router.Location,
-			    App
+			    app.Main
 			]
 		),
 		ng.router.routerInjectables,
 		ng.bind(ng.router.LocationStrategy).toClass(ng.router.HashLocationStrategy),
 	]);
 });
+
+})(this.app);

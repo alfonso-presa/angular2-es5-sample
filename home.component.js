@@ -1,14 +1,18 @@
-var HomeComponent = ng.
+'use stict';
+
+(function (app) {
+
+app.HomeComponent = ng.
 
 Component({
-    viewInjector: [People]
+    viewInjector: [app.People]
 }).
 View({
 	template: '<div *ng-if="people">Hello {{people.name}}!</div>',
     directives: [ng.NgIf]
 }).
 Class({
-	constructor: [People, function (service) {
+	constructor: [app.People, function (service) {
 		this.service = service;
 		this.loadPeople();
 	}],
@@ -20,3 +24,5 @@ Class({
 		});
 	}
 });
+
+})(this.app);

@@ -1,4 +1,8 @@
-var App = ng.
+'use stict';
+
+(function (app) {
+
+app.Main = ng.
 
 Component({
     selector: 'my-app'
@@ -13,6 +17,8 @@ Class({
 
 ng.router.RouteConfig([
 	{ path: '/', redirectTo: '/home'},
-	{ path: '/home', component: HomeComponent, as: 'home'},
-	{ path: '/test', component: TestComponent, as: 'test'}
-])(App);
+	{ path: '/home', component: app.HomeComponent, as: 'home'},
+	{ path: '/test', component: app.TestComponent, as: 'test'}
+])(app.Main);
+
+})(app);

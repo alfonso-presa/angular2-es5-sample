@@ -1,4 +1,8 @@
-var People = ng.
+'use stict';
+
+(function (app) {
+
+app.People = ng.
 
 Class({
 	constructor: [ng.Http, function (http) {
@@ -10,3 +14,5 @@ Class({
 		});
 	}
 });
+
+})(this.app);
