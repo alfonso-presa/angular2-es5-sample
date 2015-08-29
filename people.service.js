@@ -5,7 +5,7 @@
 app.People = ng.
 
 Class({
-	constructor: [ng.Http, function (http) {
+	constructor: [ngHttp.Http, function (http) {
 		this.http = http;
 	}],
 	getPeople: function () {

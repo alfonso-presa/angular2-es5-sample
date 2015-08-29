@@ -1,5 +1,8 @@
 'use stict';
 
+//TODO: Remove when this is resolved: https://github.com/angular/angular/issues/3890
+window.assert= function () {return true;};
+
 (function (app) {
 
 app.Main = ng.
@@ -9,7 +12,7 @@ Component({
 }).
 View({
 	templateUrl: 'main.html',
-    directives: [ng.router.routerDirectives]
+    directives: [ngRouter.routerDirectives]
 }).
 Class({
 	constructor: function () {}

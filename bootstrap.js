@@ -4,20 +4,23 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	ng.bootstrap(app.Main, [
-		ng.httpInjectables,
-		ng.bind(ng.router.Router).toFactory(
+	ng.bootstrap(app.Main , [
+
+		[ng.bind(ngHttp.ConnectionBackend).toClass(ngHttp.XHRBackend), ngHttp.BrowserXhr, ng.bind(ngHttp.RequestOptions).toClass(ngHttp.BaseRequestOptions), ng.bind(ngHttp.ResponseOptions).toClass(ngHttp.BaseResponseOptions), ngHttp.Http],
+		//TODO: Replace the above with the following when this is resolved: https://github.com/angular/angular/issues/3898
+		//ngHttp.HTTP_BINDINGS,
+		ng.bind(ngRouter.Router).toFactory(
 			function (registry, pipeline, location, appRoot) {
-			    return new ng.router.RootRouter(registry, pipeline, location, appRoot);
+			    return new ngRouter.RootRouter(registry, pipeline, location, appRoot);
 			}, [
-			    ng.router.RouteRegistry,
-			    ng.router.Pipeline,
-			    ng.router.Location,
+			    ngRouter.RouteRegistry,
+			    ngRouter.Pipeline,
+			    ngRouter.Location,
 			    app.Main
 			]
 		),
-		ng.router.routerInjectables,
-		ng.bind(ng.router.LocationStrategy).toClass(ng.router.HashLocationStrategy),
+		ngRouter.routerInjectables,
+		ng.bind(ngRouter.LocationStrategy).toClass(ngRouter.HashLocationStrategy)
 	]);
 });
 

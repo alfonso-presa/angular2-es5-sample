@@ -5,11 +5,11 @@
 app.HomeComponent = ng.
 
 Component({
-    viewInjector: [app.People]
+    bindings: [app.People]
 }).
 View({
-	template: '<div *ng-if="people">Hello {{people.name}}!</div>',
-    directives: [ng.NgIf]
+	template: '<div *ng-if="people">Hello {{people.name}}</div>',
+    directives: [ng.CORE_DIRECTIVES]
 }).
 Class({
 	constructor: [app.People, function (service) {
