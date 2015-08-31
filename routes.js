@@ -1,6 +1,6 @@
 'use stict';
 
-(function (app) {
+(function (ngRouter, app) {
 
 ngRouter.RouteConfig([
 	{ path: '/', redirectTo: '/home'},
@@ -8,4 +8,4 @@ ngRouter.RouteConfig([
 	{ path: '/test', component: app.TestComponent, as: 'test'}
 ])(app.Main);
 
-})(app);
+})(window.ngRouter, window.app);

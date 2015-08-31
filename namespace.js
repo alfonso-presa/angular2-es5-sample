@@ -1,5 +1,5 @@
-'use stict';
+'use strict';
 
 (function (root) {
-	root.app = root.app || {};
-})(this);
+ root.app = root.app || {};
+})(window);

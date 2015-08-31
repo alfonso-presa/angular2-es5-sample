@@ -4,25 +4,16 @@
 
 app.HomeComponent = ng.
 
-Component({
-    bindings: [app.People]
-}).
+Component({}).
 View({
-	template: '<div *ng-if="people">Hello {{people.name}}</div>',
-    directives: [ng.CORE_DIRECTIVES]
+	template: '<div>Hello {{name}}!</div>',
 }).
 Class({
-	constructor: [app.People, function (service) {
-		this.service = service;
-		this.loadPeople();
-	}],
-
-	loadPeople: function () {
-		var self = this;
-		this.service.getPeople().subscribe(function (data) {
-			self.people = data;
-		});
-	}
+	constructor: [app.People ,function (people) {
+	  people.getPeople().subscribe(function (data) {
+			this.name = data.name;
+		}.bind(this));
+	}]
 });
 
 })(this.app);

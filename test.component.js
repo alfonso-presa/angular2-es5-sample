@@ -6,8 +6,7 @@ app.TestComponent = ng.
 
 Component({}).
 View({
-	template: 'Blah',
-    directives: [ng.NgIf]
+	template: 'This is a testing page'
 }).
 Class({
 	constructor: function () {}

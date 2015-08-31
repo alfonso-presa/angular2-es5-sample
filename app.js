@@ -1,9 +1,6 @@
-'use stict';
+'use strict';
 
-//TODO: Remove when this is resolved: https://github.com/angular/angular/issues/3890
-window.assert= function () {return true;};
-
-(function (app) {
+(function (ng, ngRouter, app) {
 
 app.Main = ng.
 
@@ -11,11 +8,11 @@ Component({
     selector: 'my-app'
 }).
 View({
-	templateUrl: 'main.html',
-    directives: [ngRouter.routerDirectives]
+ templateUrl: 'main.html',
+ directives: [ngRouter.routerDirectives]
 }).
 Class({
-	constructor: function () {}
+ constructor: function () {}
 });
 
-})(app);
+})(window.ng, window.ngRouter, window.app);

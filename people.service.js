@@ -1,6 +1,6 @@
 'use stict';
 
-(function (app) {
+(function (ngHttp, app) {
 
 app.People = ng.
 
@@ -15,4 +15,4 @@ Class({
 	}
 });
 
-})(this.app);
+})(window.ngHttp, this.app);
